@@ -13,4 +13,4 @@ def cadastra_feriados(request):
         cadastro = FeriadoModel(nome=nome, data=data)
         cadastro.save()
 
-    return
+    return HttpResponse('')
