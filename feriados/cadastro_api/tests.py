@@ -10,10 +10,8 @@ class FeriadoModelTest(TestCase):
     def setUp(self):
         self.feriado = 'Natal'
         self.data = datetime.strptime('2022-12-25','%Y-%m-%d').date()
-        self.tipo = 'nacional'
 
-        self.feriado_cadastrado = FeriadoModel(nome=self.feriado, data=self.data,
-                                               tipo=self.tipo)
+        self.feriado_cadastrado = FeriadoModel(nome=self.feriado, data=self.data)
         self.feriado_cadastrado.save()
 
     def test_feriado_criado(self):
@@ -24,9 +22,6 @@ class FeriadoModelTest(TestCase):
 
     def test_feriado_data(self):
         self.assertEqual(self.feriado_cadastrado.data, self.data)
-
-    def test_feriado_tipo(self):
-        self.assertEqual(self.feriado_cadastrado.tipo, self.tipo)
 
 
 class FeriadoApiTest(TestCase):
