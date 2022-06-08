@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      background-color: #343333;
+      color: #ffcc00;
+      border-width: thick;
+      border-style: double;
+    }
+    .center{
+      color: #ffcc00;
+      font-family: 'EB Garamond', serif;
+      text-align: center;
+      display: grid;
+      height: 100vh;
+      place-items: center;
+    }
+    a{
+      color: #ffcc00;
+      font-family: 'EB Garamond', serif;
+      display: grid;
+      place-items: center;
+    }
+    html{
+      overflow-y: hidden;
+    }
+  </style>
 </head>
 <body>
-  <div>
-    <form method="POST" action={% url 'cadastro' %}>
-      {% csrf_token %}
-      {{ form }}
-
-      <button type="submit">
-        Enviar
-      </button>
-    </form>
+  <div class="container">
+    <div class="center">
+      <form method="POST" action={% url 'cadastro' %}>
+        <h3>
+          {% csrf_token %}
+        {{ form }}
+        </h3>
+        <button type="submit">
+          Enviar
+        </button>
+      </form>
+    </div>
   </div>
 </body>
 </html>

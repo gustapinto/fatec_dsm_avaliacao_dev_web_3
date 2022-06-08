@@ -2,16 +2,28 @@
 <html>
 <head>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
     .container{
-      background-color: #000000;
+      background-color: #343333;
+      color: #ffcc00;
       border-width: thick;
       border-style: double;
     }
-    div{
-      color: #d12828;
+    .center{
+      color: #ffcc00;
       font-family: 'EB Garamond', serif;
+      text-align: center;
       display: grid;
       height: 100vh;
+      place-items: center;
+    }
+    a{
+      color: #ffcc00;
+      font-family: 'EB Garamond', serif;    
+      display: grid;
       place-items: center;
     }
     html{
@@ -21,10 +33,15 @@
 </head>
 <body>
   <div class="container">
-    <div>
-      <h1>
-        {{ mensagem }}
-      </h1>
+    <div class="center">
+      <div>
+        <h1>
+          {{ mensagem }}
+        </h1>
+        <h3>
+          <a href="/cadastro">Cadastrar novo feriado</a>
+        </h3>
+      </div>
     </div>
   </div>
 </body>
