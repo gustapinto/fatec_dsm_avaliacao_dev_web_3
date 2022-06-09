@@ -7,10 +7,10 @@ def verificar(request):
     hoje = date.today()
 
     try:
-        feriado = FeriadoModel.objects.get(data=hoje)
+        feriados = FeriadoModel.objects.all().filter(data=hoje)
     except FeriadoModel.DoesNotExist:
-        feriado = None
+        feriados = None
 
-    mensagem = f'Hoje é {feriado}' if feriado else 'Hoje não é feriado'
+    msgs = [f'Hoje é feriado de {f}' for f in feriados] if feriados else ['Hoje não éferiado']
 
-    return render(request, 'feriados.html', {'mensagem': mensagem})
+    return render(request, 'feriados.html', {'msgs': msgs})

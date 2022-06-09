@@ -36,7 +36,9 @@
     <div class="center">
       <div>
         <h1>
-          {{ mensagem }}
+          {% for msg in msgs %}
+            <p>{{ msg }}</p>
+          {% endfor %}
         </h1>
         <h3>
           <a href="/cadastro">Cadastrar novo feriado</a>
